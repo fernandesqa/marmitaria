@@ -20,4 +20,9 @@ import { FoodStockComponent } from './food-stock/food-stock.component';
 })
 export class AppComponent {
   
+  loadedFeature = 'lunchboxes';
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
 }

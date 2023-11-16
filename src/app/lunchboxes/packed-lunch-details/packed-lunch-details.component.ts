@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PackedLunch } from '../packed-lunch-list/packed-lunch-list.model';
 
 @Component({
   selector: 'app-packed-lunch-details',
@@ -9,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './packed-lunch-details.component.css'
 })
 export class PackedLunchDetailsComponent {
-
+  @Input() selectedPackedLunch!: PackedLunch;
 }

@@ -21,4 +21,8 @@ export class FoodListComponent {
     new Food('Couve Refogada', 2),
   ];
 
+  onFoodAdded(food: Food) {
+    this.foodList.push(food);
+  }
+
 }

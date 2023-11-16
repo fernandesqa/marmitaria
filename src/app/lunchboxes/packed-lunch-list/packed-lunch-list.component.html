@@ -5,23 +5,12 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <div class="list-group">
-            <a *ngFor="let packedLunch of lunchboxes" 
-                href="#" 
-                class="list-group-item clearfix">
-                <div class="float-start">
-                    <h4 class="list-group-item-heading">{{ packedLunch.name }}</h4>
-                    <p class="list-group-item-text">{{ packedLunch.description }}</p>
-                </div>
-                <div class="float-end">
-                    <img 
-                        [src] = "packedLunch.imagePath" 
-                        alt="{{ packedLunch.name }}" 
-                        class="img-responsive" 
-                        style="max-height: 50px;">
-                </div>
-            </a>
+        <div class="list-group" >
+            <app-packed-lunch-item 
+                *ngFor="let packedLunchItem of lunchboxes" 
+                [packedLunch]="packedLunchItem"
+                (packedLunchSelected)="onPackedLunchSelected(packedLunchItem)"
+            ></app-packed-lunch-item>
         </div>
-        <!-- app-packed-lunch-item -->
     </div>
 </div>
