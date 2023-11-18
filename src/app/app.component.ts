@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { LunchboxesComponent } from './lunchboxes/lunchboxes.component';
 import { FoodStockComponent } from './food-stock/food-stock.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { FoodListService } from './food-stock/food-list/food-list.service';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +15,12 @@ import { FoodStockComponent } from './food-stock/food-stock.component';
     RouterOutlet, 
     HeaderComponent,
     LunchboxesComponent,
-    FoodStockComponent
+    FoodStockComponent,
+    DropdownDirective
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [FoodListService]
 })
 export class AppComponent {
   

@@ -17,14 +17,16 @@
 <!-- Menu de Opções -->
 <div class="row">
     <div class="col-12">
-        <button class="btn btn-primary dropdown-toggle">
-            Opções <span class="carret"></span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a href="#">Para a lista de compras</a></li>
-            <li><a href="#">Editar Marmita</a></li>
-            <li><a href="#">Remover Marmita</a></li>
-        </ul>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" appDropdown>
+                Opções <span class="carret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a (click)="AddToFoodList()">Adicionar à lista de alimentos</a></li>
+                <li><a href="#">Editar Marmita</a></li>
+                <li><a href="#">Remover Marmita</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
@@ -38,6 +40,10 @@
 <!-- Ingredientes -->
 <div class="row">
     <div class="col-12">
-        Ingredientes
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingredients of selectedPackedLunch.ingredients">
+                {{ ingredients.name }} {{ ingredients.amount }}
+            </li>
+        </ul>
     </div>
 </div>

@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PackedLunch } from '../packed-lunch-list/packed-lunch-list.model';
+import { LunchboxesService } from '../lunchboxes.service';
 
 @Component({
   selector: 'app-packed-lunch-item',
@@ -11,13 +12,12 @@ import { PackedLunch } from '../packed-lunch-list/packed-lunch-list.model';
 })
 export class PackedLunchItemComponent {
 
-  @Output() packedLunchSelected = new EventEmitter<void>();
   @Input() packedLunch!: PackedLunch;
 
-  onSelected() {
+  constructor(private lunchboxesService: LunchboxesService) {}
 
-    this.packedLunchSelected.emit();
-    
+  onSelected() {
+    this.lunchboxesService.packedLunchSelected.emit(this.packedLunch);
   }
 
 }
